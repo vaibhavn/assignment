@@ -21,7 +21,7 @@ import com.retail.model.User;
 public class RetailBillingDiscountTest {
 
 	private Customer regularCustomer;
-	private Customer regularPremium;
+	private Customer premiumCustomer;
 	private Item groceryItem;
 	private Item otherItem;
 	private User salesman;
@@ -38,7 +38,7 @@ public class RetailBillingDiscountTest {
 
 		// Customer details
 		regularCustomer = new Customer("Vaibhav", CustomerType.REGULAR);
-		regularPremium = new Customer("Vivek", CustomerType.PREMIUM);
+		premiumCustomer = new Customer("Vivek", CustomerType.PREMIUM);
 		
 	}
 
@@ -66,8 +66,8 @@ public class RetailBillingDiscountTest {
 	@Test
 	public void test_premiumcustomer() {
 		
-		// Handling final Order
-		Order order = new Order(regularPremium);
+		// Order for 
+		Order order = new Order(premiumCustomer);
 		order.addItem(groceryItem);
 		order.addItems(otherItem, 1);
 		order.setCreatedBy(salesman.getId());
